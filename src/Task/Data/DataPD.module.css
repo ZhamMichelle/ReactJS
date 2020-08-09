@@ -1,0 +1,12 @@
+
+.data {
+    grid-area: d;
+    background-color: purple;
+    text-align: center;
+  }
+
+  .pd{ 
+    width: 200px;
+    height: 15px;
+  }
+  

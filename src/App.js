@@ -1,26 +1,28 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import {createStore} from 'redux';
+import { Provider} from 'react-redux';
+import Total from './NewRedux/newMain'
+import TotalFunc from './SundayReduxFunc/TotalFunc'
+// import ThirdButtonFunc from './SundayReduxFunc/ThirdButtonFunc'
+ import { rootReducer } from './NewRedux/Store/newReducers'
+//import { rootReducer } from './SundayReduxFunc/ReducersSFunc'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const store = createStore(rootReducer,  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+
+const App = () => {
+    console.log("Testing");
+    return(<div>
+        {/* <Provider store={store} >
+    <TotalFunc />
+    </Provider> */}
+
+   <Provider store={store} >
+    <Total />
+    </Provider>
+
+</div>
+    );
 }
 
 export default App;
